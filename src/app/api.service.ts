@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable, throwError, race, of } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { Race } from './model/race';
+import { Statistic } from './model/statistic';
 @Injectable({
   providedIn: 'root'
 })
@@ -24,28 +25,28 @@ export class ApiService {
     return this.http.get<Race[]>(this.baseurl + 'races',{ observe: 'response' });
   }
 
-  runExtract():Observable<HttpResponse<null>> {
-    return this.http.post<null>(this.baseurl + 'extract',{ observe: 'response' });
+  runExtract():Observable<any> {
+    return this.http.post<Statistic>(this.baseurl + 'extract',{ observe: 'response' });
   }
 
-  runTransform():Observable<HttpResponse<null>> {
-    return this.http.post<null>(this.baseurl + 'transform',{ observe: 'response' });
+  runTransform():Observable<any> {
+    return this.http.post<Statistic>(this.baseurl + 'transform',{ observe: 'response' });
   }
 
-  runLoad():Observable<HttpResponse<null>> {
-    return this.http.post<null>(this.baseurl + 'load',{ observe: 'response' });
+  runLoad():Observable<any> {
+    return this.http.post<Statistic>(this.baseurl + 'load',{ observe: 'response' });
   }
 
   deleteRaces():Observable<HttpResponse<null>> {
     return this.http.delete<null>(this.baseurl + 'races',{ observe: 'response' });
   }
 
-  writeRaceFiles():Observable<HttpResponse<null>> {
-    return this.http.post<null>(this.baseurl + 'raceFile',{ observe: 'response' });
+  writeRaceFiles():Observable<any> {
+    return this.http.post<Statistic>(this.baseurl + 'raceFile',{ observe: 'response' });
   }
 
-  writePersonFiles():Observable<HttpResponse<null>> {
-    return this.http.post<null>(this.baseurl + 'personFiles',{ observe: 'response' });
+  writePersonFiles():Observable<any> {
+    return this.http.post<Statistic>(this.baseurl + 'personFiles',{ observe: 'response' });
   }
 
 private handleError<T>(operation = 'operation', result?: T) {

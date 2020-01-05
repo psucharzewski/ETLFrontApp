@@ -1,0 +1,6 @@
+<button mat-raised-button [disabled]="extractFlag" (click)="runExtract()"> Extract</button>
+<button mat-raised-button [disabled]="transformFlag" (click)="runTransform()"> Transform</button>
+<button mat-raised-button [disabled]="loadFlag" (click)="loadRaces()"> Load</button>
+<button mat-raised-button [disabled]="raceFlag" (click)="writeRaceFiles()"> Save races to csv file</button>
+<button mat-raised-button [disabled]="personFlag" (click)="writePersonFiles()"> Save scrapped data</button>
+<button mat-raised-button [disabled]="deleteFlag" (click)="deleteRaces()"> Drop database</button>
